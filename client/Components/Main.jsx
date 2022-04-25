@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
+import { Router } from 'react-router-dom';
 import HeaderContainer from './HeaderContainer.jsx';
+import Products from "./Products.jsx"
 
 function Main() {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -32,8 +34,10 @@ function handleClick(e){
 
   return (
     <div>
-     <HeaderContainer handleClick = {handleClick} isLoggedIn = { isLoggedIn }/>   
-     
+      <Router>
+        <HeaderContainer handleClick = {handleClick} isLoggedIn = { isLoggedIn }/>   
+        <Route path='/knives/knives' element={<Products />} />
+     </Router>
     </div> 
   )
 }

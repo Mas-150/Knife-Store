@@ -1,14 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
 import App from './App.jsx';
 
 // uncomment so that webpack can bundle styles
 import styles from './styles.css';
 
 render(
-  <App />,
+  <BrowserRouter>
+    <App />,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
 
-// "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\""
